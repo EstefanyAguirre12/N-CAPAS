@@ -1,0 +1,248 @@
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Administración de Huéspedes</h5>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>Nombres </label>
+              <input type="text" class="form-control" placeholder="Nombres" value="">
+            </div>
+          </div>
+          <div class="col-md-6 pl-1">
+            <div class="form-group">
+              <label>Apellidos</label>
+              <input type="text" class="form-control" placeholder="Apellido" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>Fecha de nacimiento</label>
+              <input type="date" class="form-control" placeholder="Fecha" value="">
+            </div>
+          </div>
+          <div class="col-md-6 pl-1">
+            <div class="form-group">
+              <label>Genero </label>
+              <div ngbDropdown class="">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Seleccionar</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>Masculino</button>
+                  <button ngbDropdownItem>Femenino</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>DUI </label>
+              <input type="text" class="form-control" placeholder="DUI" value="">
+            </div>
+          </div>
+          <div class="col-md-6 pl-1">
+            <div class="form-group">
+              <label>Estatus</label>
+              <input type="text" class="form-control" placeholder="Estatus" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Condición</label>
+              <textarea class="form-control textarea" placeholder="Caracteristicas medicas generales del huésped"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+            <button type="submit" class="btn btn-primary btn-round">Agregar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title"> Simple Table</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class=" text-primary">
+            <th>
+              Nombres
+            </th>
+            <th>
+              Apellidos
+            </th>
+            <th>
+              Fecha de nacimiento
+            </th>
+            <th>
+              Genero
+            </th>
+            <th>
+              DUI
+            </th>
+            <th>
+              Estatus
+            </th>
+            <th>
+              Condicion
+            </th>
+            <th class="text-right">
+              Acción
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">
+                Dakota
+              </td>
+              <td class="text-center">
+                Rice
+              </td>
+              <td class="text-center">
+                12/05/1955
+              </td>
+              <td class="text-center">
+                Femenino
+              </td>
+              <td class="text-center">
+                05048697-4
+              </td>
+              <td class="text-center">
+                Activo
+              </td>
+              <td class="text-center">
+                En buena condicion fisica
+              </td>
+              <td class="text-center">
+                <button type="submit" class="btn btn-primary btn-link nc-icon nc-ruler-pencil"></button>
+                <button type="submit" class="btn btn-danger btn-link nc-icon nc-simple-remove"></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                Dakota
+              </td>
+              <td class="text-center">
+                Rice
+              </td>
+              <td class="text-center">
+                12/05/1955
+              </td>
+              <td class="text-center">
+                Femenino
+              </td>
+              <td class="text-center">
+                05048697-4
+              </td>
+              <td class="text-center">
+                Activo
+              </td>
+              <td class="text-center">
+                En buena condicion fisica
+              </td>
+              <td class="text-center">
+                <button type="submit" class="btn btn-primary btn-link nc-icon nc-ruler-pencil"></button>
+                <button type="submit" class="btn btn-danger btn-link nc-icon nc-simple-remove"></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                Dakota
+              </td>
+              <td class="text-center">
+                Rice
+              </td>
+              <td class="text-center">
+                12/05/1955
+              </td>
+              <td class="text-center">
+                Femenino
+              </td>
+              <td class="text-center">
+                05048697-4
+              </td>
+              <td class="text-center">
+                Activo
+              </td>
+              <td class="text-center">
+                En buena condicion fisica
+              </td>
+              <td class="text-center">
+                <button type="submit" class="btn btn-primary btn-link nc-icon nc-ruler-pencil"></button>
+                <button type="submit" class="btn btn-danger btn-link nc-icon nc-simple-remove"></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                Dakota
+              </td>
+              <td class="text-center">
+                Rice
+              </td>
+              <td class="text-center">
+                12/05/1955
+              </td>
+              <td class="text-center">
+                Femenino
+              </td>
+              <td class="text-center">
+                05048697-4
+              </td>
+              <td class="text-center">
+                Activo
+              </td>
+              <td class="text-center">
+                En buena condicion fisica
+              </td>
+              <td class="text-center">
+                <button type="submit" class="btn btn-primary btn-link nc-icon nc-ruler-pencil"></button>
+                <button type="submit" class="btn btn-danger btn-link nc-icon nc-simple-remove"></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                Dakota
+              </td>
+              <td class="text-center">
+                Rice
+              </td>
+              <td class="text-center">
+                12/05/1955
+              </td>
+              <td class="text-center">
+                Femenino
+              </td>
+              <td class="text-center">
+                05048697-4
+              </td>
+              <td class="text-center">
+                Activo
+              </td>
+              <td class="text-center">
+                En buena condicion fisica
+              </td>
+              <td class="text-center">
+                <button type="submit" class="btn btn-primary btn-link nc-icon nc-ruler-pencil"></button>
+                <button type="submit" class="btn btn-danger btn-link nc-icon nc-simple-remove"></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
