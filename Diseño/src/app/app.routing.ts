@@ -1,31 +1,33 @@
-import { LoginComponent } from './layouts/login/login.component';
-import { Routes } from '@angular/router';
+import { Routes } from "@angular/router";
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 
 export const AppRoutes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  }, {
-    path: '',
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full",
+  },
+  {
+    path: "",
     component: AdminLayoutComponent,
     children: [
-        {
-      path: '',
-      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-  }]},
+      {
+        path: "",
+        loadChildren: () =>
+          import("./layouts/admin-layout/admin-layout.module").then(
+            (m) => m.AdminLayoutModule
+          ),
+      },
+    ],
+  },
   {
-    path: 'login',
-    component: LoginComponent,
-    children: [
-        {
-      path: 'login',
-      loadChildren: () => import('./layouts/login/login.module').then(m => m.LoginModule)
-  }]},
+    path: "login",
+    loadChildren: () =>
+      import("./layouts/login/login.module").then((m) => m.LoginModule),
+  },
   {
-    path: '**',
-    redirectTo: 'login'
-  }
-]
+    path: "**",
+    redirectTo: "login",
+  },
+];

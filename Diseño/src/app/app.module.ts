@@ -1,40 +1,47 @@
-import { LoginComponent } from './layouts/login/login.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { ToastrModule } from "ngx-toastr";
 
-import { SidebarModule } from './sidebar/sidebar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule} from './shared/navbar/navbar.module';
-import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
+import { SidebarModule } from "./sidebar/sidebar.module";
+import { FooterModule } from "./shared/footer/footer.module";
+import { NavbarModule } from "./shared/navbar/navbar.module";
+import { FixedPluginModule } from "./shared/fixedplugin/fixedplugin.module";
 
-import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routing';
+import { AppComponent } from "./app.component";
+import { AppRoutes } from "./app.routing";
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
-
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+  HttpClient,
+} from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
-    LoginComponent,
-
-  ],
+  declarations: [AppComponent, AdminLayoutComponent],
   imports: [
     BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes,{
-      useHash: true
+    RouterModule.forRoot(AppRoutes, {
+      useHash: true,
     }),
+    HttpClientModule,
     SidebarModule,
     NavbarModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      easeTime: 200,
+      positionClass: "toast-bottom-left",
+      progressBar: true,
+      preventDuplicates: true,
+      closeButton: true,
+      countDuplicates: true,
+      tapToDismiss: true,
+    }),
     FooterModule,
-    FixedPluginModule
+    FixedPluginModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
