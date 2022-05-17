@@ -1,48 +1,53 @@
-import { API_RESPONSE } from "./../interfaces/common";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { EMPTY, Observable } from "rxjs";
-import { AuthLogin, AuthResponse } from "../interfaces/auth";
-import { catchError, map, take, tap } from "rxjs/operators";
 import { ToastrService } from "ngx-toastr";
+import { Observable, EMPTY } from "rxjs";
+import { take, catchError, map } from "rxjs/operators";
+import { BedResponse } from "../interfaces/bed";
 
 @Injectable({
   providedIn: "root",
 })
-export class AuthService {
+export class BedService {
   private readonly _URL = "assets/mockapi/";
-  private readonly _USERS = "users.json";
+  private readonly _BEDS = "bed.json";
 
   constructor(private _http: HttpClient, private _toastr: ToastrService) {}
 
-  onAutenticateCredentials(credentials: AuthLogin): Observable<AuthResponse> {
-    return this._http.post<AuthResponse>(this._URL, credentials).pipe(
-      take(1),
-      catchError((error) => {
-        this.errorHandle(error);
-        return EMPTY;
-      })
-    );
-  }
-
-  onRegister(user: any): Observable<AuthResponse> {
-    return this._http.post<AuthResponse>(this._URL, user,).pipe(
-      take(1),
-      catchError((error) => {
-        this.errorHandle(error);
-        return EMPTY;
-      })
-    );
-  }
-
-  getUsers(): Observable<AuthResponse> {
-    return this._http.get<AuthResponse>(this._URL + this._USERS,).pipe(
+  getBeds(): Observable<BedResponse> {
+    return this._http.get<BedResponse>(this._URL + this._BEDS).pipe(
       take(1),
       catchError((error) => {
         this.errorHandle(error);
         return EMPTY;
       }),
-      map((Response: AuthResponse) => {
+      map((Response: BedResponse) => {
+        return Response;
+      })
+    );
+  }
+
+  deleteBed(id: Number): Observable<any> {
+    return this._http.delete(this._URL + id).pipe(
+      take(1),
+      catchError((error) => {
+        this.errorHandle(error);
+        return EMPTY;
+      }),
+      map((Response: any) => {
+        return Response;
+      })
+    );
+  }
+
+  createBed(id: Number): Observable<any> {
+    return this._http.delete(this._URL + id).pipe(
+      take(1),
+      catchError((error) => {
+        this.errorHandle(error);
+        return EMPTY;
+      }),
+      map((Response: any) => {
         return Response;
       })
     );
